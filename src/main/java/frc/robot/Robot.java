@@ -9,6 +9,8 @@ import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.commands.Drive;
+import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.drivers.Pigeon;
 
 /**
@@ -24,7 +26,10 @@ public class Robot extends TimedRobot {
 
   public static ShuffleboardTab shuffleboardTab = Shuffleboard.getTab("BAB A");
 
-  public static Pigeon myPigeon;
+//  public static Pigeon myPigeon;
+  public static Drivetrain drivetrain;
+  public static Drive driveArcade;
+  public static OI oi;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -36,9 +41,16 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
 
-    myPigeon = new Pigeon();
-    myPigeon.resetPigeonPosition();
-    shuffleboardTab.add("Pigeon",(x)->{x.setSmartDashboardType("Gyro");x.addDoubleProperty("Value", ()-> myPigeon.getCompassHeading(),null);});
+//    myPigeon = new Pigeon();
+    drivetrain = new Drivetrain(false,false);
+    oi = new OI();
+    driveArcade = new Drive();
+
+    drivetrain.setDefaultCommand(driveArcade);
+
+    // pigeon
+//    myPigeon.resetPigeonPosition();
+//    shuffleboardTab.add("Pigeon",(x)->{x.setSmartDashboardType("Gyro");x.addDoubleProperty("Value", ()-> myPigeon.getCompassHeading(),null);});
   }
 
   /**
