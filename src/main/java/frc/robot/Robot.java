@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.Drive;
+import frc.robot.subsystems.Collector;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.drivers.Pigeon;
 
@@ -30,6 +31,7 @@ public class Robot extends TimedRobot {
   public static Drivetrain drivetrain;
   public static Drive driveArcade;
   public static OI oi;
+  public static Collector collector;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -45,6 +47,7 @@ public class Robot extends TimedRobot {
     drivetrain = new Drivetrain(false,false);
     oi = new OI();
     driveArcade = new Drive();
+    collector = new Collector();
 
     drivetrain.setDefaultCommand(driveArcade);
 

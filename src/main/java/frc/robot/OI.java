@@ -3,6 +3,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
+import frc.robot.commands.collector.Collector;
 import frc.robot.lib.AxisButton;
 
 
@@ -58,15 +59,7 @@ public class OI {
     public final AxisButton aLT = new AxisButton(aux,2,.05);
 
     public OI() {
-        /*
-         * TODO: Define what each button does
-         *
-         * Examples:
-         * dLT.whenPressed(new CollectCommand());
-         * dRT.whileHeld(new EjectCommand());
-         *
-         */
-
+        dA.whileHeld(new Collector());
     }
 
 }

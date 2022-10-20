@@ -5,6 +5,10 @@ public abstract class RobotMap {
     // ** CAN IDs **
     public static final int LEFT_DRIVETRAIN = 4;
     public static final int RIGHT_DRIVETRAIN = 5;
+    public static final int COLLECTER_CIM = 0;
+    public static final int shooter_NEO = 0;
+    public static final int INDEXER_ONE = 0;
+    public static final int INDEXER_TWO = 0;
 
     //pigeon when connected in CAN path
     public static final int PIGEON = 99;
