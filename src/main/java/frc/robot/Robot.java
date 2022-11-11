@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.Drive;
 import frc.robot.subsystems.Collector;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Indexer;
+import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.drivers.Pigeon;
 
 /**
@@ -32,6 +34,8 @@ public class Robot extends TimedRobot {
   public static Drive driveArcade;
   public static OI oi;
   public static Collector collector;
+  public static Shooter shooter;
+  public static Indexer indexer;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -48,6 +52,8 @@ public class Robot extends TimedRobot {
     oi = new OI();
     driveArcade = new Drive();
     collector = new Collector();
+    shooter = new Shooter();
+    indexer = new Indexer();
 
     drivetrain.setDefaultCommand(driveArcade);
 
