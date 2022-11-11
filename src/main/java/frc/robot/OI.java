@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
 import frc.robot.commands.collector.Collector;
+import frc.robot.commands.indexer.AllIndexer;
 import frc.robot.commands.shooter.LongShoot;
 import frc.robot.commands.shooter.TraversalShoot;
 import frc.robot.lib.AxisButton;
@@ -64,7 +65,7 @@ public class OI {
         dRB.whileHeld(new Collector());
         dRT.whileHeld(new LongShoot());
         dLT.whileHeld(new TraversalShoot());
-        dA.whileHeld(new IndexerCollectorFront());
+        dA.whileHeld(new AllIndexer());
     }
 
 }
