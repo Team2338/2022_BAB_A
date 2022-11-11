@@ -64,7 +64,7 @@ public class OI {
         dRB.whileHeld(new Collector());
         dRT.whileHeld(new LongShoot());
         dLT.whileHeld(new TraversalShoot());
-
+        dA.whileHeld(new IndexerCollectorFront());
     }
 
 }

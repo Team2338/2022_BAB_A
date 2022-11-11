@@ -23,7 +23,11 @@ public class Indexer extends SubsystemBase {
         indexerMotorBack.setInverted(true);
     }
 
-    public void setSpeed(double percent) {
+    public void setSpeedFront(double percent) {
         indexerMotorFront.set(ControlMode.PercentOutput, percent);
+    }
+
+    public void setSpeedBack(double percent) {
+        indexerMotorBack.set(ControlMode.PercentOutput, percent);
     }
 }
