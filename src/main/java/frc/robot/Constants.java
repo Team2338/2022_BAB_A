@@ -17,5 +17,16 @@ public final class Constants {
         // TODO: tune the shooter speed.
         public static final int LONG_RANGE = 50;
         public static final int TRAVERSAL_RANGE = 25;
+        public static final double PID_FF = 0.0002; // TODO: Tune numbers
+        public static final double PID_P = 0.002; // TODO: Tune numbers
+    }
+
+    public static final class Collector {
+        public static final double SPEED = 0.3;
+    }
+
+    public static final class Indexer {
+        public static final double INDEXERFRONT = 0.2;
+        public static final double INDEXERBACK = 0.2;
     }
 }

@@ -1,6 +1,7 @@
 package frc.robot.commands.indexer;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
 import frc.robot.Robot;
 
 public class AllIndexer extends CommandBase {
@@ -11,8 +12,8 @@ public class AllIndexer extends CommandBase {
 
     @Override
     public void initialize() {
-        Robot.indexer.setSpeedFront(0.2);
-        Robot.indexer.setSpeedBack(0.2);
+        Robot.indexer.setSpeedFront(Constants.Indexer.INDEXERFRONT);
+        Robot.indexer.setSpeedBack(Constants.Indexer.INDEXERBACK);
     }
 
     // Called every time the scheduler runs while the command is scheduled.

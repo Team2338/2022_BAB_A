@@ -36,6 +36,7 @@ public class Robot extends TimedRobot {
   public static Collector collector;
   public static Shooter shooter;
   public static Indexer indexer;
+  public static int a;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -47,19 +48,20 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
 
-//    myPigeon = new Pigeon();
+//  myPigeon = new Pigeon();
     drivetrain = new Drivetrain(false,false);
     oi = new OI();
     driveArcade = new Drive();
     collector = new Collector();
     shooter = new Shooter();
     indexer = new Indexer();
+    a = 0;
 
     drivetrain.setDefaultCommand(driveArcade);
 
     // pigeon
-//    myPigeon.resetPigeonPosition();
-//    shuffleboardTab.add("Pigeon",(x)->{x.setSmartDashboardType("Gyro");x.addDoubleProperty("Value", ()-> myPigeon.getCompassHeading(),null);});
+//  myPigeon.resetPigeonPosition();
+//  shuffleboardTab.add("Pigeon",(x)->{x.setSmartDashboardType("Gyro");x.addDoubleProperty("Value", ()-> myPigeon.getCompassHeading(),null);});
   }
 
   /**
@@ -98,7 +100,13 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during autonomous. */
   @Override
-  public void autonomousPeriodic() {}
+  public void autonomousPeriodic() {
+    if (a >= 500) {
+      drivetrain.driveArcade(0,0);
+    } else {
+      drivetrain.driveArcade(5,5);
+    }
+  }
 
   @Override
   public void teleopInit() {
