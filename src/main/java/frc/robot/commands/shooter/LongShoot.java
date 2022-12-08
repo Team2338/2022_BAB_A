@@ -12,12 +12,12 @@ public class LongShoot extends CommandBase {
 
     @Override
     public void initialize() {
-        Robot.shooter.setSpeed(Constants.Shooter.LONG_RANGE);
+        ;
     }
 
     @Override
     public void execute() {
-
+        Robot.shooter.setSpeed(Constants.Shooter.LONG_RANGE);
     }
 
     @Override

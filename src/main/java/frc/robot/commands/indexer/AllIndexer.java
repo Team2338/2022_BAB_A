@@ -12,13 +12,15 @@ public class AllIndexer extends CommandBase {
 
     @Override
     public void initialize() {
-        Robot.indexer.setSpeedFront(Constants.Indexer.INDEXERFRONT);
-        Robot.indexer.setSpeedBack(Constants.Indexer.INDEXERBACK);
+
     }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
-    public void execute() {}
+    public void execute() {
+        Robot.indexer.setSpeedFront(Constants.Indexer.INDEXERFRONT);
+        Robot.indexer.setSpeedBack(Constants.Indexer.INDEXERBACK);
+    }
 
     // Called once the command ends or is interrupted.
     @Override

@@ -12,12 +12,12 @@ public class TraversalShoot extends CommandBase {
 
     @Override
     public void initialize() {
-        Robot.shooter.setSpeed(Constants.Shooter.TRAVERSAL_RANGE);
+
     }
 
     @Override
     public void execute() {
-
+        Robot.shooter.setSpeed(Constants.Shooter.TRAVERSAL_RANGE);
     }
 
     @Override
