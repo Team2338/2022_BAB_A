@@ -10,7 +10,7 @@ import frc.robot.RobotMap;
 
 public class Shooter extends SubsystemBase {
 
-    private static CANSparkMax shooterMotor = new CANSparkMax(RobotMap.shooter_NEO, CANSparkMaxLowLevel.MotorType.kBrushless);
+    private static CANSparkMax shooterMotor = new CANSparkMax(RobotMap.SHOOTER_NEO, CANSparkMaxLowLevel.MotorType.kBrushless);
     private static SparkMaxPIDController pidController;
     private static RelativeEncoder shooterEncoder;
 
@@ -19,15 +19,21 @@ public class Shooter extends SubsystemBase {
         shooterMotor.restoreFactoryDefaults();
         shooterMotor.setIdleMode(CANSparkMax.IdleMode.kCoast);
         shooterMotor.enableVoltageCompensation(12);
+
         shooterEncoder = shooterMotor.getEncoder();
 
         pidController = shooterMotor.getPIDController();
+        pidController.setOutputRange(0,1);
         pidController.setFF(Constants.Shooter.PID_FF);
         pidController.setP(Constants.Shooter.PID_P);
     }
 
     public void setSpeed(double speed) {
         shooterMotor.set(speed);
+    }
+
+    public void setPID(double speed) {
+        pidController.setReference(speed, CANSparkMax.ControlType.kVelocity);
     }
 
     public double getShooterSpeed() {

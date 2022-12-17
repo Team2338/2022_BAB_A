@@ -5,6 +5,7 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap;
+import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 
 public class Indexer extends SubsystemBase {
 
@@ -13,11 +14,14 @@ public class Indexer extends SubsystemBase {
 
     public Indexer() {
         super();
+        indexerMotorFront.setNeutralMode(NeutralMode.Brake);
+        indexerMotorBack.setNeutralMode(NeutralMode.Brake);
+
         indexerMotorFront.configFactoryDefault();
         indexerMotorBack.configFactoryDefault();
 
-        indexerMotorFront.setNeutralMode(NeutralMode.Brake);
-        indexerMotorBack.setNeutralMode(NeutralMode.Brake);
+        indexerMotorFront.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
+        indexerMotorBack.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
 
         indexerMotorFront.setInverted(true);
         indexerMotorBack.setInverted(true);

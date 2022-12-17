@@ -22,7 +22,7 @@ public final class Constants {
     }
 
     public static final class Collector {
-        public static final double SPEED = 0.3;
+        public static final double SPEED = 0.4;
     }
 
     public static final class Indexer {

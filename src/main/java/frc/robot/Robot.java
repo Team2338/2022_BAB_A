@@ -32,11 +32,11 @@ public class Robot extends TimedRobot {
 //  public static Pigeon myPigeon;
   public static Drivetrain drivetrain;
   public static Drive driveArcade;
-  public static OI oi;
   public static Collector collector;
   public static Shooter shooter;
   public static Indexer indexer;
   public static int a;
+  public static OI oi;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -50,11 +50,11 @@ public class Robot extends TimedRobot {
 
 //  myPigeon = new Pigeon();
     drivetrain = new Drivetrain(false,false);
-    oi = new OI();
     driveArcade = new Drive();
     collector = new Collector();
     shooter = new Shooter();
     indexer = new Indexer();
+    oi = new OI();
     a = 0;
 
     drivetrain.setDefaultCommand(driveArcade);

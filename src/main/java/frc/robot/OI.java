@@ -62,10 +62,17 @@ public class OI {
     public final AxisButton aLT = new AxisButton(aux,2,.05);
 
     public OI() {
-        dRB.whileHeld(new Collector());
-        dRT.whileHeld(new LongShoot());
-        dLT.whileHeld(new TraversalShoot());
+        //driver controller
+        dX.whileHeld(new Collector());
+        dB.whileHeld(new LongShoot());
+        dY.whileHeld(new TraversalShoot());
         dA.whileHeld(new AllIndexer());
+
+        //aux controller
+        aX.whileHeld(new Collector());
+        aB.whileHeld(new LongShoot());
+        aY.whileHeld(new TraversalShoot());
+        aA.whileHeld(new AllIndexer());
     }
 
 }
